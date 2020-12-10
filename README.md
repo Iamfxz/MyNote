@@ -1,6 +1,6 @@
 # README
 
-A repository about learning AI.
+这是方向臻的学习笔记和资源存储仓库
 
 ## 一、gitbook网址：[https://fzu-ai.gitbook.io/ai/](https://fzu-ai.gitbook.io/ai/)
 
