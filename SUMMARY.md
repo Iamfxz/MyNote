@@ -1,6 +1,12 @@
 # Table of contents
 
 * [README](README.md)
+* [Paper](Paper/README.md)
+  * [神经协同过滤](Paper/2017-神经协同过滤.md) 
+  * [非侵入信号深度学习](Paper/2020-非侵入信号深度学习.md) 
+  * [肾透析移植机器学习](Paper/2020-肾透析移植机器学习.md) 
+  * [心理学随机森林](Paper/2020-心理学随机森林.md)
+  * [P300数据学习](Paper/P300数据学习.md)
 * [Leetcode](Leetcode/README.md)
   * [第一天(乱刷)](Leetcode/leetcode第一天-乱刷.md)
   * [第二天(栈)](Leetcode/leetcode第二天-栈.md)
@@ -69,6 +75,6 @@
   * [1.2自动梯度](Pytorch/1.2.torch_autograd.md)
   * [1.3神经网络](Pytorch/1.3.torch_net.md)
   * [1.4模型实现](Pytorch/1.4.torch_classifier.md)
-* [other](Other/README.md)
+* [Other](Other/README.md)
   * [pythonic语法](Other/pythonic.md)
   * [Ubuntu备忘](Other/Ubuntu命令.md)
