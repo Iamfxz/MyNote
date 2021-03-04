@@ -1,6 +1,8 @@
 # README
 
-## 一、gitbook网址：
+## 一、我的网址：
+
+[个人主页](https://github.com/Iamfxz)
 
 [阿臻的学习笔记](https://fxz-note.gitbook.io/note/)
 
