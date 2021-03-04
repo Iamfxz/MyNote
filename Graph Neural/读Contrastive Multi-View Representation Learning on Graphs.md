@@ -20,11 +20,11 @@ Personalized PageRank
 
 ### Graph auto encoders (GAE)
 
-![img](https://pic1.zhimg.com/80/v2-d9c5e951f11f291f5ccb133a2891b4d0_1440w.jpg)
+![一般图自编码流程](https://pic1.zhimg.com/80/v2-d9c5e951f11f291f5ccb133a2891b4d0_1440w.jpg)
 
-![[公式]](https://www.zhihu.com/equation?tex=%5Cmathbf%7BZ%7D+%3D+%5Cmathrm%7BGCN%7D%28%5Cmathbf%7BX%7D%2C+%5Cmathbf%7BA%7D%29+%5C%5C)
+![[GAE公式]](https://www.zhihu.com/equation?tex=%5Cmathbf%7BZ%7D+%3D+%5Cmathrm%7BGCN%7D%28%5Cmathbf%7BX%7D%2C+%5Cmathbf%7BA%7D%29+%5C%5C)
 
-![[公式]](https://www.zhihu.com/equation?tex=%5Cmathrm%7BGCN%7D%28%5Cmathbf%7BX%7D%2C+%5Cmathbf%7BA%7D%29+%3D+%5Ctilde%7B%5Cmathbf%7BA%7D%7D+%5Cmathrm%7BReLU%7D+%28%5Ctilde%7B%5Cmathbf%7BA%7D%7D%5Cmathbf%7BXW_0%7D%29%5Cmathbf%7BW_1%7D+%5C%5C)
+![GAE详细公式](https://www.zhihu.com/equation?tex=%5Cmathrm%7BGCN%7D%28%5Cmathbf%7BX%7D%2C+%5Cmathbf%7BA%7D%29+%3D+%5Ctilde%7B%5Cmathbf%7BA%7D%7D+%5Cmathrm%7BReLU%7D+%28%5Ctilde%7B%5Cmathbf%7BA%7D%7D%5Cmathbf%7BXW_0%7D%29%5Cmathbf%7BW_1%7D+%5C%5C)
 
 ### Deep graph Infomax(DGI)
 
@@ -34,11 +34,11 @@ Personalized PageRank
 
 - 第一想法：传统自编码器，用隐藏向量还原原始数据，即训练目标为output拟合原始数据
 
-![img](https://bkimg.cdn.bcebos.com/pic/4d086e061d950a7b988f021904d162d9f3d3c9b1?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxODA=,g_7,xp_5,yp_5/format,f_auto)
+![一般自编码器](https://bkimg.cdn.bcebos.com/pic/4d086e061d950a7b988f021904d162d9f3d3c9b1?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxODA=,g_7,xp_5,yp_5/format,f_auto)
 
 - 进一步想法：变分自编码器，为每个样本构造专属的正态分布，然后采样获得隐藏向量来重构。隐藏向量的分布尽量能接近高斯分布，能够随机生成隐含变量喂给解码器，也提高了泛化能力。
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20181128111509647.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMxODk1OTQz,size_16,color_FFFFFF,t_70)
+![一般变分自编码器](https://img-blog.csdnimg.cn/20181128111509647.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMxODk1OTQz,size_16,color_FFFFFF,t_70)
 
 - 但是，对于数据集和任务来说，完成任务所需要的特征并不一定要能完成图像重构。例如，辨别百元假钞不一定要能完整复刻出百元假钞。
 
@@ -58,28 +58,28 @@ Personalized PageRank
 
 - p(z|x) 表示 x 所产生的编码向量的分布，我们设它为高斯分布。这是我们要找的**编码器**。
 
-![img](https://pic3.zhimg.com/80/v2-8a4a3dd7b5b75e2160ec0b8130ca1502_1440w.jpg)
+![互信息公式1](https://pic3.zhimg.com/80/v2-8a4a3dd7b5b75e2160ec0b8130ca1502_1440w.jpg)
 
 - p̃(x) 原始数据的分布，p(z) 是在 p(z|x) 给定之后整个 Z 的分布
 
-![img](https://pic1.zhimg.com/80/v2-6c2b5c4769d44a82439dbe2c934a5fc4_1440w.jpg)
+![互信息公式2](https://pic1.zhimg.com/80/v2-6c2b5c4769d44a82439dbe2c934a5fc4_1440w.jpg)
 
 - 好的特征编码器，应该要使得互信息尽量地大:
 
-![img](https://pic4.zhimg.com/80/v2-50902c9abfcf086cb253199e31b2322f_1440w.jpg)
+![互信息公式3](https://pic4.zhimg.com/80/v2-50902c9abfcf086cb253199e31b2322f_1440w.jpg)
 
 - H是信息熵，I是互信息。  
 - **I(X, Z) = H(Z) - H(Z|X)**  ：熵 H(Z) 看作一个随机变量不确定度的量度，那么 H(Z|X) 就是 X 没有涉及到的 Z 的部分的不确定度的量度。总的Z的不确定度，减去知道X而剩下的Y的不确定度，所以可以直观地理解互信息是**Z变量提供给Y的信息量**
 
-![img](https://www.omegaxyz.com/wp-content/uploads/2018/08/MI5.png)
+![互信息图](https://www.omegaxyz.com/wp-content/uploads/2018/08/MI5.png)
 
 - ![[公式]](https://www.zhihu.com/equation?tex=I%28X%3BY%29%3DKL%28p%28x%2Cy%29+%7C%7C+p%28x%29p%28y%29%29)
 
 ## 二、模型组件
 
-![image-20210303232919140](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210303232919140.png)
+![论文模型](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210303232919140.png)
 
-<img src="https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210304013905369.png" alt="算法过程" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210304013905369.png" alt="论文伪算法过程" style="zoom:50%;" />
 
 - 增强机制：对图的结构进行增广，然后对相同的节点进行子采样。类似于CV中的裁剪。
 - 两个专用的GNN：即图编码器。对应原数据和增强后的数据。
@@ -88,20 +88,20 @@ Personalized PageRank
   
 - 一个共享的MLP（靠左）：用于学习图的**节点表示**。具有两个隐藏层和PReLU激活函数。
 
-  ![image-20210303201008592](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210303201008592.png)
+  ![PReLU函数](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210303201008592.png)
 
 - 一个图池化层P：即readout函数，而后传入共享MLP（结构同上）中，得出**图表示**。
 
   - 每个GCN层中的节点表示的总和，连接起来，然后将它们馈送到一个单层前馈网络。
-  - ![image-20210303211111157](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210303211111157.png)
+  - ![模型右半部分](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210304165113887.png)
   - 分别求和作为下游任务的  **图表示**  和  **节点表示**
-  - ![image-20210303234236283](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210303234236283.png)
+  - ![返回值](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210303234236283.png)
 
 - 鉴别器D：图的**节点表示**和另一个图的**图形表示**进行对比。并对它们的一致性进行评分。
 
   - 损失函数：最大化互信息
-  - ![image-20210303235501903](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210303235501903.png)
-  - ![image-20210304013125246](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210304013125246.png)
+  - ![损失函数](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210303235501903.png)
+  - ![鉴别器函数](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210304013125246.png)
 
 
 
@@ -122,7 +122,7 @@ T是广义转移矩阵。从一个状态转移到下一个。
 
 Personalized PageRank : 带入T = D<sup>-1/2</sup>AD<sup>-1/2</sup>, θ<sub>k</sub> = e<sup>-t</sup>t<sup>k</sup>/k!
 
-![image-20210303185803768](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210303185803768.png)
+![两种图传播实例](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/image-20210303185803768.png)
 
 ### 子采样
 
