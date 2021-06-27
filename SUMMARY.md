@@ -75,6 +75,7 @@
   * [1.2自动梯度](Pytorch/1.2.torch_autograd.md)
   * [1.3神经网络](Pytorch/1.3.torch_net.md)
   * [1.4模型实现](Pytorch/1.4.torch_classifier.md)
+  * [2数据操作](Pytorch/2.pytroch_data_operate.md)
 * [Graph Neural](Graph Neural/README.md)
     * [图神经网络基础](Graph Neural/图神经网络基础.md)
     * [读Contrastive Multi-View Representation Learning on Graphs](Graph Neural/读Contrastive Multi-View Representation Learning on Graphs.md)
