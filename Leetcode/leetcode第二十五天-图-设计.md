@@ -1,16 +1,19 @@
-**今天完成题目**:1042,1663,706,705,1658    
+# 第二十五天(图)(设计)
+
+**今天完成题目**:1042,1663,706,705,1658\
 1042:不邻接植花
-- bfs遍历花
-```python
-from collections import defaultdict
 
-dict1 = defaultdict(int)
-dict2 = defaultdict(set)
-dict3 = defaultdict(str)
-dict4 = defaultdict(list)
-# 如果key为空,返回int,set,str,list的默认空值
-```
+*   bfs遍历花
 
+    \`\`\`python
+
+    from collections import defaultdict
+
+dict1 = defaultdict(int) dict2 = defaultdict(set) dict3 = defaultdict(str) dict4 = defaultdict(list)
+
+## 如果key为空,返回int,set,str,list的默认空值
+
+````
 1663:动物收容所
 - 双向队列deque
 - 出队时候,记得先判断有无队
@@ -52,7 +55,7 @@ class MyHashSet:
         bucketIndex = self._hash(key)
         return self.bucketArray[bucketIndex].exists(key)
 
-        
+
 class Node:
     def __init__(self, value, nextNode=None):
         self.value = value
@@ -64,7 +67,7 @@ class Bucket:# 在头部插入
     '''
     def __init__(self):
         self.head = Node(-1)
-    
+
     def exists(self, val):
         cur = self.head.next
         while cur!=None:
@@ -77,8 +80,8 @@ class Bucket:# 在头部插入
         if not self.exists(newVal):
             newNode = Node(newVal, self.head.next)
             self.head.next = newNode
-            
-    
+
+
     def delete(self, val):
         pre = self.head
         cur = self.head.next
@@ -88,15 +91,16 @@ class Bucket:# 在头部插入
                 return
             pre = cur
             cur = cur.next
-
-```
+````
 
 1658:三合一
-- 设计三个栈
-```python
-self.tripleStack = [None]*stackSize*3 
-self.top = [0, stackSize , stackSize*2] # 栈顶指针,也是下一个数据的存放位置
-self.roof = [stackSize, stackSize*2, stackSize*3] # 栈顶指针最大位置
-self.bottom = [0, stackSize, stackSize*2] # 栈顶指针最小位置
-```
-- 注意,peek函数,也需要按照pop的方法判断,只不过是不删元素.
+
+*   设计三个栈
+
+    ```python
+    self.tripleStack = [None]*stackSize*3 
+    self.top = [0, stackSize , stackSize*2] # 栈顶指针,也是下一个数据的存放位置
+    self.roof = [stackSize, stackSize*2, stackSize*3] # 栈顶指针最大位置
+    self.bottom = [0, stackSize, stackSize*2] # 栈顶指针最小位置
+    ```
+* 注意,peek函数,也需要按照pop的方法判断,只不过是不删元素.
