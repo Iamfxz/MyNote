@@ -2,7 +2,7 @@
 
 * [README](README.md)
 * [Scheduling](Scheduling/README.md)
-  * [JSSP环境](Scheduling/A Reinforcement Learning Environment For Job-Shop Scheduling.md) 
+  * [JSSP环境](Scheduling/A Reinforcement Learning Environment For Job-Shop Scheduling.md)
 * [Paper](Paper/README.md)
   * [神经协同过滤](Paper/2017-神经协同过滤.md) 
   * [非侵入信号深度学习](Paper/2020-非侵入信号深度学习.md) 
@@ -80,7 +80,7 @@
   * [2数据操作](Pytorch/2.pytroch_data_operate.md)
 * [Graph Neural](Graph Neural/README.md)
   * [图神经网络基础](Graph Neural/图神经网络基础.md)
-  * [读Contrastive Multi-View Representation Learning on Graphs](Graph Neural/读Contrastive Multi-View Representation Learning on Graphs.md)
+  * [Contrastive Multi-View Representation Learning on Graphs](Graph Neural/读Contrastive Multi-View Representation Learning on Graphs.md)
 * [Other](Other/README.md)
   * [pythonic语法](Other/pythonic.md)
   * [Ubuntu备忘](Other/Ubuntu命令.md)
