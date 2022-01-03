@@ -34,7 +34,7 @@ Personalized PageRank
 
 - 第一想法：传统自编码器，用隐藏向量还原原始数据，即训练目标为output拟合原始数据
 
-![一般自编码器](https://bkimg.cdn.bcebos.com/pic/4d086e061d950a7b988f021904d162d9f3d3c9b1?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxODA=,g_7,xp_5,yp_5/format,f_auto)
+![一般自编码器](https://image-1252566752.cos.ap-hongkong.myqcloud.com/4d086e061d950a7b988f021904d162d9f3d3c9b1)
 
 - 进一步想法：变分自编码器，为每个样本构造专属的正态分布，然后采样获得隐藏向量来重构。隐藏向量的分布尽量能接近高斯分布，能够随机生成隐含变量喂给解码器，也提高了泛化能力。
 
