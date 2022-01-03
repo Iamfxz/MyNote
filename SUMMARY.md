@@ -1,6 +1,8 @@
 # Table of contents
 
 * [README](README.md)
+* [Scheduling](Scheduling/README.md)
+  * [论文：开源JSSP环境](Scheduling/《A Reinforcement Learning Environment For Job-Shop Scheduling》.md)
 * [Paper](Paper/README.md)
   * [神经协同过滤](Paper/2017-神经协同过滤.md) 
   * [非侵入信号深度学习](Paper/2020-非侵入信号深度学习.md) 
@@ -79,6 +81,7 @@
 * [Graph Neural](Graph Neural/README.md)
     * [图神经网络基础](Graph Neural/图神经网络基础.md)
     * [读Contrastive Multi-View Representation Learning on Graphs](Graph Neural/读Contrastive Multi-View Representation Learning on Graphs.md)
+* [CMD](CMD/README.md)
 * [Other](Other/README.md)
   * [pythonic语法](Other/pythonic.md)
   * [Ubuntu备忘](Other/Ubuntu命令.md)
