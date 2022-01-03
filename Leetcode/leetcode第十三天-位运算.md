@@ -1,20 +1,14 @@
-# 第十三天(位运算)
-
-**今天完成题目**:693,190,268,371,1731,401,405,1684\
+**今天完成题目**:693,190,268,371,1731,401,405,1684  
 693:交替位二进制数
-
-* pass
+- pass
 
 190:颠倒二进制位
-
-* pass
+- pass
 
 268:缺失数字
-
-* pass
+- pass
 
 371,1731:两整数之和
-
 ```python
 def getSum(self, a, b):
     # 2^32
@@ -31,11 +25,13 @@ def getSum(self, a, b):
         b = carry % MASK
     return a if a <= MAX_INT else  ~(a^0xFFFFFFFF)
 ```
-
 ![前32位取反,后32位不变](https://raw.githubusercontent.com/Iamfxz/picRepos/master/imgs/20200731122338.png)
 
-401:二进制手表 1. 字符为hour,整数为minute 2. combinations获取所有的组合情况,permutations可以获取所有的排列情况 3. 限制时间范围 4. 转化为字符型
-
+401:二进制手表
+1. 字符为hour,整数为minute
+2. combinations获取所有的组合情况,permutations可以获取所有的排列情况
+3. 限制时间范围
+4. 转化为字符型
 ```python
 from itertools import combinations, permutations
 h_m = ['8','4','2','1',32,16,8,4,2,1]
@@ -44,9 +40,7 @@ list(permutations(h_m,num)) #获得排列情况(无序有重复)
 ```
 
 405:数字转换为十六进制数
-
-* if num<0: num=0x100000000+num # 负数补码是一种偏移
+- if num<0: num=0x100000000+num # 负数补码是一种偏移
 
 1684:整数转换
-
-* 同405类似,将负数补码看作偏移,之后再做比较
+- 同405类似,将负数补码看作偏移,之后再做比较
