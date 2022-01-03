@@ -2,7 +2,7 @@
 
 * [README](README.md)
 * [Scheduling](Scheduling/README.md)
-  * [开源JSSP环境](Scheduling/A Reinforcement Learning Environment For Job-Shop Scheduling.md) 
+  * [JSSP环境](Scheduling/A Reinforcement Learning Environment For Job-Shop Scheduling.md) 
 * [Paper](Paper/README.md)
   * [神经协同过滤](Paper/2017-神经协同过滤.md) 
   * [非侵入信号深度学习](Paper/2020-非侵入信号深度学习.md) 
@@ -71,7 +71,7 @@
   * [《第二章》](Deep Learning/《第二章》.md)
   * [《第三章》](Deep Learning/《第三章》.md)
   * [《第四章》](Deep Learning/《第四章》.md)
-  * [台湾陈蕴侬视频2020](《深度学习与神经网络》/台湾陈蕴侬视频2020.md)
+  * [台湾陈蕴侬视频2020](Deep Learning/台湾陈蕴侬视频2020.md)
 * [Pytorch](Pytorch/README.md)
   * [1.1数据基础](Pytorch/1.1.torch_data.md)
   * [1.2自动梯度](Pytorch/1.2.torch_autograd.md)
